@@ -1,5 +1,16 @@
+import ItemCount from "./ItemCount";
+
 function ItemListContainer(props) {
-    return <h1>Catálogo</h1>;
+    
+  return (
+
+    <>
+    <h2>Catálogo de productos</h2>
+    <ItemCount stock={5} onAdd={()=>{}} initial={1}/>
+    </>
+
+  )
+    
   }
 
   export default ItemListContainer

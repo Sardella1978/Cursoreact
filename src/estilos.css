@@ -6,6 +6,8 @@ h1{font-size: 1.5rem; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucid
    padding-left: 40px;
    border-style: double;}
 
+h2{color: brown}
+
 .navbar-flex{
     display: flex;
     width: 100%;
@@ -24,3 +26,20 @@ a{ text-decoration: none;
     color: brown;}
 
 .iconoCarrito{size: 1rem;}
+
+.card-grid {display: grid;
+    grid-column-gap: 10px; grid-row-gap: 10px;
+    width: 15%;
+    background-color: #fdebd0;
+    margin-left: 5%;} 
+    
+.cuont-flex{display: flex; flex-direction: row;
+            justify-content:space-between;} 
+            
+.btnCount{color: brown;
+          height: 50%;
+          margin-top: 5%; margin-right: 5%; margin-left: 5%;
+          } 
+p{text-align: center; color: brown;}
+    
+            

@@ -1,7 +1,7 @@
 import CartWidget from "./CartWidget"
-import ItemListContainer from "./ItemListContainer"
 
 const NavBar = () => {
+      
     return (
         <navbar className = "navbar-flex">
             <nav className = "nav-flex">
@@ -18,9 +18,8 @@ const NavBar = () => {
               </div>              
             </nav>
         </navbar>
-        
     )
+    }
     
-}
 
 export default NavBar
