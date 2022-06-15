@@ -27,18 +27,18 @@ a{ text-decoration: none;
 
 .iconoCarrito{size: 1rem;}
 
-.card-grid {display: grid;
-    grid-column-gap: 10px; grid-row-gap: 10px;
-    width: 15%;
-    background-color: #fdebd0;
-    margin-left: 5%;} 
+.cardItem {display: grid;
+    grid-template-columns: repeat(6, 2fr);
+    grid-template-rows: repeat(3, 4fr);
+    grid-column-gap: 10px; grid-row-gap: 10px;} 
+
     
 .cuont-flex{display: flex; flex-direction: row;
             justify-content:space-between;} 
             
 .btnCount{color: brown;
           height: 50%;
-          margin-top: 5%; margin-right: 5%; margin-left: 5%;
+          margin-top: 5%; margin-right: 5%; margin-left: 5%; 
           } 
 p{text-align: center; color: brown;}
     
