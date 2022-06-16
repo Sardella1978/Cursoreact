@@ -6,7 +6,9 @@ h1{font-size: 1.5rem; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucid
    padding-left: 40px;
    border-style: double;}
 
-h2{color: brown}
+h2{color: brown;}
+h3{color: brown;}
+p{text-align: center; color: brown;}
 
 .navbar-flex{
     display: flex;
@@ -28,18 +30,33 @@ a{ text-decoration: none;
 .iconoCarrito{size: 1rem;}
 
 .cardItem {display: grid;
-    grid-template-columns: repeat(6, 2fr);
-    grid-template-rows: repeat(3, 4fr);
-    grid-column-gap: 10px; grid-row-gap: 10px;} 
+    grid-template-columns: repeat(3, 4fr);
+    /* grid-template-rows: repeat(3, 4fr); */
+    grid-column-gap: 10px; grid-row-gap: 20px;
+    margin-left: 30px; margin-top: 50px; margin-bottom: 30px;} 
 
-    
-.cuont-flex{display: flex; flex-direction: row;
-            justify-content:space-between;} 
-            
+.botonera{text-align: center; padding-top: 20px; color: brown; background-color: #fdebd0;
+          padding-bottom: 30px;}
+
+.botonAgregar{padding-top: 20px; padding-bottom: 20px;
+     text-align: center; color: brown; background-color: #fdebd0;
+              size: 50px;}
+       
 .btnCount{color: brown;
           height: 50%;
           margin-top: 5%; margin-right: 5%; margin-left: 5%; 
           } 
-p{text-align: center; color: brown;}
+
     
+.detail{ display: flex;
+         justify-content: space-between;
+         align-items: start;
+         border: 2px solid brown;
+         margin-top: 30px; margin-left: 50px; margin-right: 50px;
+         height: 450px;
+         }
+
+.descripcion{ padding: 10px;}
+
+
             

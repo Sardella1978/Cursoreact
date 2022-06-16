@@ -55,12 +55,17 @@ function ItemCount ({stock}) {
     }
   
   return (
-         <div>
+    <>
+          <div className="botonera">
             <button className="btnCount" onClick={aumentar}>+</button>
             <spam>{count}</spam>
             <button className="btnCount" onClick={disminuir}>-</button>
+          </div>    
+          <div className="botonAgregar">
             <button className="btnAgregar" onClick={agregarAlCarrito}>agregar al carrito</button>
-         </div>       
+          </div>
+    </>
+               
   )
 }
     //         </count> 

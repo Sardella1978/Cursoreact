@@ -1,5 +1,5 @@
 
-import ShopIcon from "../imagenes/ShopIcon.png"
+import ShopIcon from "./iconos/ShopIcon.png"
 
 const CartWidget = () => {
     return (

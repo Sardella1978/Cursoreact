@@ -6,9 +6,9 @@ function Item ({id, name, image, precio, stock}){
     return (
         <div key= {id} className= "cardItem">
             <img src={image} alt={name} />
-            <p>{name}</p>
+            <h4>{name}</h4>
             <p>{precio}</p>
-            <ItemCount stock= {stock}/> 
+            {/* <ItemCount stock= {stock}/>  */}
         </div>
     )
 }
