@@ -1,6 +1,6 @@
 //acá tenemos que armar una card
 
-import ItemCount from "./ItemCount"
+import {Link} from "react-router-dom"
 
 function Item ({id, name, image, precio, stock}){
     return (
@@ -8,7 +8,8 @@ function Item ({id, name, image, precio, stock}){
             <img src={image} alt={name} />
             <h4>{name}</h4>
             <p>{precio}</p>
-            {/* <ItemCount stock= {stock}/>  */}
+            <Link to={`/detail/${id}`}>Ver Detalle</Link>
+            
         </div>
     )
 }

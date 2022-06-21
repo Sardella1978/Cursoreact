@@ -1,30 +1,24 @@
-import { useState } from "react";
-import { useEffect } from "react";
-import { traerProducto } from "../productos";
-import ItemDetail from "./ItemDetail";
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import getProductsById from '../Promises/getProductsById'
+import ItemDetail from './ItemDetail'
 
+function ItemDetailContainer() {
+    const [product, setProduct] = useState()
+    const { id } = useParams()
+    console.log(typeof id)
 
-
-
-function ItemDetailContainer () {
-    const [producto, setProducto] = useState ({})
-  
-  useEffect (() => {
-    traerProducto ()
-    .then ((res) => {
-        setProducto (res);
-    }
-    )
-  },[])
-
-  console.log (producto)
-  
+  useEffect(() => {
+    getProductsById(parseInt(id))
+    .then(response => {
+        setProduct(response)
+    })
+    }, [])
 
   return (
-    
-    <>
-      <ItemDetail producto = {producto}/>
-    </>
+         <div style={{marginTop: '30px'}}>
+            <ItemDetail {...product} />
+        </div>
   )
 }
 

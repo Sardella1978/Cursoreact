@@ -1,18 +1,19 @@
 import ItemCount from "./ItemCount"
 
+function ItemDetail({name, id, descripcion, stock, price, image}) {
+  return (
 
-const ItemDetail = ({producto}) => {
-  return(
-    <div className="detail">
-        <img src ={producto.image} alt= {producto.name} width= "450" height="450"/>
-        <div className="descripcion">
-            <h3>{producto.name}</h3> <br />
-            <p>{producto.descripcion}</p> <br></br>
-            <p> ${producto.precio}</p>
-            <p> Stock:{producto.stock}</p>
-            <ItemCount stock= {producto.stock}/>
-        </div>
-    
+    <div>
+    <div>
+        <h3>{name}</h3>
+    </div>
+    <img src={image} alt={id} />
+    <div >
+        <h4><b>$ {price}</b></h4> 
+        <p>{descripcion}</p>
+    </div>
+    <ItemCount stock={stock}/>
+
     </div>
   )
 }

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import productos from "../productos";
 import ItemList from "./ItemList";
-import traerProductos from "../promesas/traerProductos";
+import traerProductos from "../Promises/traerProductos";
 
 function ItemListContainer (props) {
   const [items, setItems] = useState ([])

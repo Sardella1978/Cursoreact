@@ -1,38 +1,44 @@
-const productos = [
+export const productos = [
     {
     id: 1,
     name: 'Difusor cristal',
     image: './imagenes/difusores.jpg' ,
+    descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Quae ducimus perspiciatis unde minus quam iste molestias est dolor",
     precio: 1500,
     stock: 10,
     },
     {id: 2,
         name: "Difusor cristal",
         image: "./imagenes/difusores.jpg" ,
+        descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Quae ducimus perspiciatis unde minus quam iste molestias est dolor",
         precio: 1500,
         stock: 20,
     },
     {id: 3,
         name: "Difusor cristal",
         image: "./imagenes/difusores.jpg" ,
+        descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Quae ducimus perspiciatis unde minus quam iste molestias est dolor",
         precio: 1500,
         stock: 15,
     },
     {id: 4,
         name: "Difusor cristal",
         image: "./imagenes/difusores.jpg" ,
+        descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Quae ducimus perspiciatis unde minus quam iste molestias est dolor",
         precio: 1500,
         stock: 15,
     },
     {id: 5,
         name: "Difusor cristal",
         image: "./imagenes/difusores.jpg", 
+        descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Quae ducimus perspiciatis unde minus quam iste molestias est dolor",
         precio: 1500,
         stock: 20,
     },
     {id: 6,
         name: "Difusor cristal",
         image: "./imagenes/difusores.jpg" ,
+        descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Quae ducimus perspiciatis unde minus quam iste molestias est dolor",
         precio: 1500,
         stock: 10,
     }
@@ -47,6 +53,8 @@ export const producto = {
     descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt ab deleniti modi numquam magnam veritatis? Saepe quaerat natus quibusdam quasi nam nisi cupiditate temporibus incidunt, laudantium labore odit debitis consequatur."
     }        
 
+    //promesa para pedir 1 producto del ItemDetailContainer
+    
 export const traerProducto = () => {
         return new Promise ((resolve) => {
             setTimeout (() =>{
@@ -54,5 +62,7 @@ export const traerProducto = () => {
             },2000)
         })
     }
+
+    
 
 export default productos;
