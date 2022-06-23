@@ -1,17 +1,19 @@
-export const productos = [
+const productos = [
     {
     id: 1,
-    name: 'Difusor cristal',
-    image: './imagenes/difusores.jpg' ,
+    name: 'Velas glass',
+    image: './imagenes/Velas de soja.jpg' ,
     descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Quae ducimus perspiciatis unde minus quam iste molestias est dolor",
     precio: 1500,
+    categoryId: "velas",
     stock: 10,
     },
     {id: 2,
-        name: "Difusor cristal",
+        name: "Velas cuenco ",
         image: "./imagenes/difusores.jpg" ,
         descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Quae ducimus perspiciatis unde minus quam iste molestias est dolor",
         precio: 1500,
+        categoryId: "velas",
         stock: 20,
     },
     {id: 3,
@@ -19,50 +21,33 @@ export const productos = [
         image: "./imagenes/difusores.jpg" ,
         descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Quae ducimus perspiciatis unde minus quam iste molestias est dolor",
         precio: 1500,
+        categoryId: "difusores",
         stock: 15,
     },
     {id: 4,
-        name: "Difusor cristal",
+        name: "Difusor nature",
         image: "./imagenes/difusores.jpg" ,
         descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Quae ducimus perspiciatis unde minus quam iste molestias est dolor",
         precio: 1500,
+        categoryId: "difusores",
         stock: 15,
     },
     {id: 5,
-        name: "Difusor cristal",
+        name: "Esencia de vainilla",
         image: "./imagenes/difusores.jpg", 
         descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Quae ducimus perspiciatis unde minus quam iste molestias est dolor",
         precio: 1500,
+        categoryId: "esencias",
         stock: 20,
     },
     {id: 6,
-        name: "Difusor cristal",
+        name: "Esencia de verbena",
         image: "./imagenes/difusores.jpg" ,
         descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Quae ducimus perspiciatis unde minus quam iste molestias est dolor",
         precio: 1500,
+        categoryId: `esencias`,
         stock: 10,
     }
 ]   
-
-export const producto = {
-    id: 1,
-    name: 'Difusor cristal',
-    image: './imagenes/difusores.jpg' ,
-    precio: 1500,
-    stock: 10,
-    descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt ab deleniti modi numquam magnam veritatis? Saepe quaerat natus quibusdam quasi nam nisi cupiditate temporibus incidunt, laudantium labore odit debitis consequatur."
-    }        
-
-    //promesa para pedir 1 producto del ItemDetailContainer
-    
-export const traerProducto = () => {
-        return new Promise ((resolve) => {
-            setTimeout (() =>{
-                resolve (producto);
-            },2000)
-        })
-    }
-
-    
 
 export default productos;

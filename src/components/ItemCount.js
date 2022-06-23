@@ -1,41 +1,6 @@
 import { useState } from "react";
 
-// const ItemCount = (stock, initial, onAdd) => {
- 
-// const [contador, setContador] = useState (0) //set=cambiar
-//     console.log (contador)
-
-// const aumentarContador = () => {
-//      setContador (contador + 1)
-//        }
-      
-// const disminuirContador = () => {
-//     if (contador > 0) {
-//     setContador (contador - 1)
-//     }
-// }
-// const agregarAlCarrito = () => {
-//     if (contador >0) {}
-// }
-
-// return(
-//    <>
-//     <card className= "card-grid">
-//       <p>Difusor cristal</p>
-//         <count className= "cuont-flex">
-//           <button className="btnCount" onClick={aumentarContador}>+</button>
-//           <p>{contador}</p>
-//           <button className="btnCount" onClick={disminuirContador}>-</button>
-//         </count> 
-//        <button className="btnAgregar" onClick={agregarAlCarrito}>agregar al carrito</button>
-//     </card>
-//   </>
-
-// )
-
-// }
-
-function ItemCount ({stock}) {
+function ItemCount ({stock,initial, onAdd}) {
   const [count, setCount] = useState (0)
     
   function aumentar () {
@@ -49,16 +14,14 @@ function ItemCount ({stock}) {
       }
     }
     const agregarAlCarrito = () => {
-       if (count >0) {
-
-      }
+       onAdd(count)
     }
   
   return (
     <>
           <div className="botonera">
             <button className="btnCount" onClick={aumentar}>+</button>
-            <spam>{count}</spam>
+            <p>{count}</p>
             <button className="btnCount" onClick={disminuir}>-</button>
           </div>    
           <div className="botonAgregar">
@@ -68,11 +31,5 @@ function ItemCount ({stock}) {
                
   )
 }
-    //         </count> 
-    //        <button className="btnAgregar" onClick={agregarAlCarrito}>agregar al carrito</button>
-    //     </card>
-    //   </>
-    
-    // )
-  
+      
 export default ItemCount

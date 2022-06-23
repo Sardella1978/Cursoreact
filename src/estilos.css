@@ -7,14 +7,17 @@ h1{font-size: 1.5rem; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucid
    border-style: double;}
 
 h2{color: brown;}
-h3{color: brown;}
-p{text-align: center; color: brown;}
+h3{color: brown; text-align: center;}
+h4{color: brown; text-align: center;}
+
+p{text-align: center; color: brown;
+  size: 1rem;}
 
 .navbar-flex{
     display: flex;
     width: 100%;
     height: 80px;
-    background-color: #fdebd0;} 
+    background-color:#fdebd0;} 
 
 .nav-flex{ display: flex; flex-direction: row ;
            justify-content: space-around; 
@@ -29,11 +32,46 @@ a{ text-decoration: none;
 
 .iconoCarrito{size: 1rem;}
 
-.cardItem {display: grid;
-    grid-template-columns: repeat(3, 4fr);
-    /* grid-template-rows: repeat(3, 4fr); */
-    grid-column-gap: 10px; grid-row-gap: 20px;
-    margin-left: 30px; margin-top: 50px; margin-bottom: 30px;} 
+/*estilos Card*/
+
+.container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 50px;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+  }
+  
+  .price {
+    color: brown;
+    font-size: 22px;
+  }
+  
+  .card .buttonCard {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: brown;
+    background-color:#fdebd0;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    
+  }
+  
+  .card .buttonCard:hover {
+    opacity: 0.7;
+    
+  }
+  img {
+    width: 100%;
+  }
 
 .botonera{text-align: center; padding-top: 20px; color: brown; background-color: #fdebd0;
           padding-bottom: 30px;}
@@ -57,6 +95,7 @@ a{ text-decoration: none;
          }
 
 .descripcion{ padding: 10px;}
+
 
 
             
