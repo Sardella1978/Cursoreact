@@ -1,5 +1,6 @@
 import productos from "../productos"
 
+//promesa para pedir productos por categoria. Va en el ItemListContainer
 
 const getProductsByCategory= (categoryId) => {
     return new Promise (resolve => {

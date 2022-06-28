@@ -1,10 +1,11 @@
-//promesa para traer productos a ItemListContainer
+//promesa para traer todos los productos. Va en el ItemListContainer
+import productos from "../productos";
 
-const traerProductos = (time, task) => {
+export const traerProductos = () => {
     return new Promise ((resolve) => {
-        setTimeout (() =>{
-            resolve (task);
-        },time)
+        setTimeout(()=> {
+            resolve(productos);
+        }, 500)
     })
 }
 

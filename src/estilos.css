@@ -1,10 +1,12 @@
 
 h1{font-size: 1.5rem; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
    color: brown; 
-   width: 500px;
+   width: 300px;
    padding-top: 10px;
    padding-left: 40px;
-   border-style: double;}
+   padding-bottom: 10px;
+   border-style: double;
+  }
 
 h2{color: brown;}
 h3{color: brown; text-align: center;}
@@ -22,15 +24,16 @@ p{text-align: center; color: brown;
 .nav-flex{ display: flex; flex-direction: row ;
            justify-content: space-around; 
            width: 100%;
-           padding-top: 30px;
+           padding-top: 15px;
 } 
 
-li{list-style-type: none;
+li {list-style-type: none;
    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;}
-a{ text-decoration: none;
+
+   a{ text-decoration: none;
     color: brown;}
 
-.iconoCarrito{size: 1rem;}
+.iconoCarrito {color: brown;}
 
 /*estilos Card*/
 
@@ -38,6 +41,7 @@ a{ text-decoration: none;
     display: flex;
     flex-direction: row;
     margin-bottom: 50px;
+    width: 20%;
 }
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);

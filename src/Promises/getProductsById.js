@@ -1,4 +1,4 @@
-//promesa para traer UN producto el ItemDetailContainer
+//promesa para traer UN producto. Va en el ItemDetailContainer
 import productos from "../productos"
 
 const getProductsById = (id) => {
