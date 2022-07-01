@@ -2,9 +2,9 @@ import { useState, useContext, useEffect } from "react"
 import {contexto} from "./CartContext"
 
 const Carrito=()=>{
-  const [carrito, setCarrito] = useState([])
+  const [carrito, setCarrito] = useState([]) //inicia con un array vacío (¿como lo voy llenando?)
   console.log (carrito)
-  const {CarCantidad, CarTotal, Borrar}= useContext (contexto)
+  const {CarCantidad, CarTotal, Borrar, image, id}= useContext (contexto)
   const total= CarCantidad()
   const precio = CarTotal()
 
@@ -12,6 +12,7 @@ const Carrito=()=>{
     <div>
       <h2>Carrito</h2>
       <div>
+        <img src={image} alt={id}/>
         <h3>cantidad: {total}</h3>
         <h3>total: {precio}</h3>
         <button onClick={Borrar}>Quitar</button>

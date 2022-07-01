@@ -2,7 +2,7 @@ import NavBar from "./components/NavBar"
 import ItemListContainer from "./components/ItemListContainer"
 import ItemDetailContainer from "./components/ItemDetailContainer"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { MiProvider } from "./components/CartContext"
+import {MiProvider} from "./components/CartContext"
 import Carrito from "./components/Carrito"
 import Checkout from "./components/Checkout"
 
@@ -11,6 +11,7 @@ const App = () => {
     return (
     
       <BrowserRouter>
+      
        <MiProvider>
          <NavBar/>
          <Routes>
@@ -22,6 +23,7 @@ const App = () => {
             <Route path="/checkout" element={<Checkout/>}/>
          </Routes>
         </MiProvider>
+        
       </BrowserRouter>  
      
   )

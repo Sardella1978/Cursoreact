@@ -5,7 +5,7 @@ import {contexto} from "./CartContext"
 
 
 
-function ItemDetail ({name, id, descripcion, stock, price, image}) {
+function ItemDetail ({name, id, descripcion, stock, precio, image}) {
 
   const {agregarProducto} = useContext (contexto)
 
@@ -28,7 +28,7 @@ function ItemDetail ({name, id, descripcion, stock, price, image}) {
     </div>
     <img src={image} alt={id} />
     <div >
-        <h4><b>$ {price}</b></h4> 
+        <h4><b>$ {precio}</b></h4> 
         <p>{descripcion}</p>
     </div>
     <ItemCount initial={0} onAdd={onAdd} stock={stock}/>
