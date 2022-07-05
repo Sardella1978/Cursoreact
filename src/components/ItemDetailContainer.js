@@ -2,24 +2,39 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import getProductsById from '../Promises/getProductsById'
 import ItemDetail from './ItemDetail'
+import { db } from "../firebase"
+import { collection , getDoc , doc } from "firebase/firestore"
 
-// cuando clickeo en boton "ver detalle" (del itemListContainer) pido que me traiga solo UN producto con la promesa getProductsById
 
 function ItemDetailContainer() {
-    const [product, setProduct] = useState()
+    const [item, setItem] = useState()
     const [loading,setLoading] = useState(true)
     const { id } = useParams()
     
-  useEffect(() => {
-    getProductsById(parseInt(id)) //debo parsear el id para que no me de un string
-    .then(response => {
-        setProduct(response)
-    })
+    useEffect(() => {
+
+      setLoading(true)
+  
+      const collectionProductos = collection(db, "productos")
+      const refeDelDoc = doc(collectionProductos,"kecWwFEGf9cK6CYh9XZ4")
+      const consulta = getDoc(refeDelDoc)
+  
+      consulta
+        .then(resultado=>{
+          const producto = resultado.data()
+          setItem(producto)
+          setLoading(false)
+          console.log (producto)
+        })
+        .catch((error)=>{
+          console.log(error)
+        })
+  
     }, [])
 
   return (
          <div style={{marginTop: '30px'}}>
-            <ItemDetail {...product} />
+            <ItemDetail {...item} />
         </div>
   )
 }

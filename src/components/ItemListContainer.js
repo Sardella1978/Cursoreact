@@ -16,15 +16,16 @@ function ItemListContainer () {
 
  useEffect (() => {
   
-const collectionProductos= collection (db, "Productos")
+const collectionProductos= collection (db, "productos")
+     console.log (collectionProductos)
 const consulta = getDocs (collectionProductos)
    
 consulta
     .then ((resultado)=>{
-   console.log (resultado)
+  //  console.log (resultado)
  })
     .catch ((error)=>{
-    console.log (error)
+    // console.log (error)
  })
  }, [categoryId])
   
