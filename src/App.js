@@ -5,6 +5,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import {MiProvider} from "./components/CartContext"
 import Carrito from "./components/Carrito"
 import Checkout from "./components/Checkout"
+import {db} from "./firebase"
+
+console.log (db)
 
 
 const App = () => {
