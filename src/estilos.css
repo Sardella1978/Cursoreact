@@ -2,9 +2,7 @@
 h1{font-size: 1.5rem; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
    color: brown; 
    width: 300px;
-   padding-top: 10px;
-   padding-left: 40px;
-   padding-bottom: 10px;
+   padding-top: 10px; padding-left: 40px; padding-bottom: 10px;
    border-style: double;
   }
 
@@ -30,75 +28,76 @@ p{text-align: center; color: brown;
 li {list-style-type: none;
    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;}
 
-   a{ text-decoration: none;
+a { text-decoration: none;
     color: brown;}
-
-.iconoCarrito {color: brown;}
-
-/*estilos Card*/
-
-.container {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 50px;
-    width: 20%;
+.cartWidget{
+  display: flex;
+  flex-direction: row;
 }
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: auto;
-    text-align: center;
-    font-family: arial;
-  }
-  
-  .price {
-    color: brown;
-    font-size: 22px;
-  }
-  
-  .card .buttonCard {
-    border: none;
-    outline: 0;
-    padding: 12px;
-    color: brown;
-    background-color:#fdebd0;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-    
-  }
-  
-  .card .buttonCard:hover {
-    opacity: 0.7;
-    
-  }
-  img {
-    width: 100%;
-  }
+.iconoCarrito {color: brown;
+}
 
-.botonera{text-align: center; padding-top: 20px; color: brown; background-color: #fdebd0;
-          padding-bottom: 30px;}
 
-.botonAgregar{padding-top: 20px; padding-bottom: 20px;
+/*Cards del catalogo*/
+
+.card{
+  width: 33%;
+  grid-column: 2/3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  transform: scale(); transition: transform 1s;
+}
+.ItemListContainer{
+  display: grid;
+            grid-template-columns: repeat(3, 2fr);
+            grid-template-rows: repeat(3, 4fr);
+            grid-column-gap: 5px; grid-row-gap: 10px;
+            margin-left: 200px;
+            
+}
+
+/*Detalle del producto*/
+
+.itemDetail {
+  width: 70%;
+  margin-left: 150px;
+  display: flex;
+  flex-direction: row; justify-content: space-around;
+  border: solid brown;
+}
+.imgItemDetail {
+       object-fit: cover;
+  
+}
+.description {
+  display: flex; text-align: center;
+  width: 70%; margin-left: 50px;
+}
+.count{
+  display: flex; justify-content: center;
+  flex-direction: column;
+  height: 30%;
+} 
+.botonera{display: flex; flex-direction: row; justify-content: space-evenly;
+          margin-top: 20px; color: brown; background-color: #fdebd0;
+          height: 50px;}
+
+.botonAgregar{padding-top: 5px; padding-bottom: 5px;
      text-align: center; color: brown; background-color: #fdebd0;
               size: 50px;}
        
 .btnCount{color: brown;
           height: 50%;
-          margin-top: 5%; margin-right: 5%; margin-left: 5%; 
+          margin-top: 10px; margin-bottom: 10px;
+           
           } 
 
     
-.detail{ display: flex;
-         justify-content: space-between;
-         align-items: start;
-         border: 2px solid brown;
-         margin-top: 30px; margin-left: 50px; margin-right: 50px;
-         height: 450px;
-         }
 
-.descripcion{ padding: 10px;}
+
 
 
 

@@ -1,40 +1,91 @@
 import { useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
-import productos from "../productos";
 import ItemList from "./ItemList";
-import traerProductos from "../Promises/traerProductos";
-import getProductsByCategory from "../Promises/getProductsByCategory";
 import {db} from "../firebase";
-import {getDocs, collection} from "firebase/firestore"
+import {getDocs, collection, query, where} from "firebase/firestore"
 
 
 
 function ItemListContainer () {
 
-  const [items, setItems] = useState ([])
-  const {categoryId} = useParams ()
+const [items, setItems] = useState ([])
+const {categoryId} = useParams ()
+const [loading, setLoading] = useState()
 
- useEffect (() => {
+useEffect(() => {
+
+  if (categoryId) {
+    const collectionProductos = collection(db, "Productos")
+    const filtroDeLaConsulta = query(collectionProductos, where("categoryId", "==", "difusores"))
+    const consulta = getDocs(filtroDeLaConsulta)
+
+    consulta
+      .then((resultado) => {
+        const productos_mapeados = resultado.docs.map(referencia => {
+          const aux = referencia.data()
+          aux.id = referencia.id
+          return aux
+        })
+        setItems(productos_mapeados)
+        setLoading(false)
+
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  } else {
+
+    const collectionProductos = collection(db, "Productos")
+    const consulta = getDocs(collectionProductos)
+
+    consulta
+      .then((resultado) => {
+        const productos_mapeados = resultado.docs.map(referencia => {
+          const aux = referencia.data()
+          aux.id = referencia.id
+          return aux
+        })
+        setItems(productos_mapeados)
+        setLoading(false)
+
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  }
+
+}, [categoryId])
+
   
-const collectionProductos= collection (db, "productos")
-     console.log (collectionProductos)
-const consulta = getDocs (collectionProductos)
+//  useEffect (() => {
+  
+// const collectionProductos= collection (db, "Productos")
+//   console.log (collectionProductos)
+// const consulta = getDocs (collectionProductos)
    
-consulta
-    .then ((resultado)=>{
-  //  console.log (resultado)
- })
-    .catch ((error)=>{
-    // console.log (error)
- })
- }, [categoryId])
+// consulta
+//     .then ((resultado)=>{
+//     console.log (resultado.docs)
+
+//     const productos_mapeados= resultado.docs.map(referencia =>{
+//       const aux = referencia.data()
+//       aux.id = referencia.id
+//       return aux
+//     })
+//     setItems (productos_mapeados)
+//  })
+//     .catch ((error)=>{
+//     // console.log (error)
+//  })
+//  }, [categoryId])
   
   return (
     
     <>
       <h2>Catálogo de productos</h2>
+      <div className="ItemListContainer">
       <ItemList productos={items}/>
-      
+      </div>
     </>
   )
   }

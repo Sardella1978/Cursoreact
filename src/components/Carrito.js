@@ -3,20 +3,23 @@ import {contexto} from "./CartContext"
 
 const Carrito=()=>{
   const [carrito, setCarrito] = useState([]) //inicia con un array vacío (¿como lo voy llenando?)
-  console.log (carrito)
-  const {CarCantidad, CarTotal, Borrar, image, id}= useContext (contexto)
-  const total= CarCantidad()
-  const precio = CarTotal()
-
+    console.log (carrito)
+  const {id, image,precio,Borrar}= useContext (contexto)
+  
+  
   return(
     <div>
       <h2>Carrito</h2>
       <div>
         <img src={image} alt={id}/>
-        <h3>cantidad: {total}</h3>
+        //imagen
+        //nombre
+        //precio
+        //cantidad
+        //eliminar (button)
         <h3>total: {precio}</h3>
-        <button onClick={Borrar}>Quitar</button>
-        <button>Comprar</button>
+        <button onClick={Borrar}>Vaciar carrito</button>
+        <button>Confirmar la compra</button>
       </div>
     </div>
   )

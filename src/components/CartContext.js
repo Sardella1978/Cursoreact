@@ -1,66 +1,106 @@
-//Provider es un COMPONENTE que viene DENTRO de la creacion del contexto. 
-//Determina que componentes pueden usar el contexto, quienes obtebdrán su información
-//DETERMINA EL VALOR DEL CONTEXTO
-
-
-import { createContext, useState } from "react"
+import { createContext, useState, useEffect } from "react"
 
 export const contexto = createContext()
 
-const Provider = contexto.Provider //Provider es un componente
+const Provider = contexto.Provider
 
 export const MiProvider=({children}) =>{
-    console.log (children)
-    //información que queremos compartir (carrito, cantidad total, precio total)
+     
     const [carrito, setCarrito] = useState([])
-    console.log (carrito)
+    const [cantidad_total, setCantidadTotal] = useState(0)
+    const [precio_total, setPrecioTotal] = useState(0)
 
-    let i=0;
 
-    const agregarProducto= (prod)=>{
-        if (!estaDentro (prod [i].id)){
-            console.log (prod [i].id)
-            setCarrito([...carrito, prod])
-            i++
-        }
-    }
+    useEffect(() => {
+        let cantidadTotal = 0;
+    
+        carrito.forEach((producto) => {
+          cantidadTotal += producto.cantidad;
+        });
+    
+        setCantidadTotal(cantidadTotal);
+      }, [carrito]);
+    
+      useEffect(() => {
+        let montoTotal = 0;
+    
+        carrito.forEach((producto) => {
+          montoTotal += producto.cantidad * producto.precio;
+        });
+    
+        setPrecioTotal(montoTotal);
+      }, [carrito]);
+    
+      const agregarProducto = (producto) => {
+        if (!isInCart(producto.id)) setCarrito([...carrito, producto]);
+      };
+    
+      const quitarProducto = (idProducto) => {
+        setCarrito(carrito.filter((producto) => producto.id !== idProducto));
+      };
+    
+      const vaciarCarrito = () => {
+        setCarrito([]);
+      };
+    
+      const isInCart = (id) => {
+        return carrito.some((prod) => prod.id === id);
+      };
+    
+      return (
+        <MiProvider
+          value={{
+            agregarProducto,
+            carrito,
+            quitarProducto,
+            isInCart,
+            cantidad_total,
+            vaciarCarrito,
+            precio_total,
+          }}
+        >
+          {children}
+        </MiProvider>
+      );
+    };
+    
+    
+    
+    
+//     const agregarProducto = (producto,cantidad) => {
+//         const copia = [...carrito]
+//         const nuevo_producto = {
+//             ...producto,
+//             cantidad : cantidad
+//         }
+//         copia.push(nuevo_producto)
+//         setCarrito(copia)
+//         setCantidadTotal(cantidad_total+cantidad)
+//         setPrecioTotal(precio_total+cantidad*producto.precio)
+//         console.log (agregarProducto)
+//     }
 
-    const estaDentro=(id)=>{
-        return carrito.some (produ=> produ[i].id ===id)
-    }
+//     const eliminarProducto = (producto) => {
 
-    const Borrar=({id})=>{
-        const borrado = carrito.filter(prod=>prod [i].id === id)
-        setCarrito (borrado)
-        console.log (carrito)
-    }
+//     }
+    
+//     const actualizarCantidad = (producto, cantidad) => {
 
-    const CarCantidad=()=>{
-        let cantidad =0;
+//     }
 
-           carrito.forEach (prod=>{
-               cantidad += prod[i].cantidad
-               console.log (cantidad)
-           })
-           return cantidad
-    }
+//     const vaciarCarrito = () => {}
 
-    const CarTotal=()=>{
-        let cantidad=0
-        let total;
-        carrito.forEach (prod=>{
-            cantidad += (prod[i].cantidad)
-            total=cantidad*prod[i].precio
-            console.log (cantidad)
-        })
-        return total
-    }
+//     const valorDelContexto = {
+//         carrito : carrito,
+//         cantidad_total: cantidad_total,
+//         precio_total: precio_total,
+//         agregarProducto: agregarProducto,
+//     }
 
-    return(
-        <Provider value={{carrito, estaDentro,agregarProducto,Borrar, CarCantidad, CarTotal}}>
-            {children}
-        </Provider>
-    )
-
-}
+//     return (
+//         <Provider value={valorDelContexto}>
+//             {children}
+//         </Provider>
+//     )
+// }
     

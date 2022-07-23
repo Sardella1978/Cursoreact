@@ -18,19 +18,18 @@ function ItemCount ({stock,initial, onAdd}) {
        
       }
 
-
-
   return (
     <>
+        <div className="count">
           <div className="botonera">
             <button className="btnCount" onClick={aumentar}>+</button>
             <p>{count}</p>
             <button className="btnCount" onClick={disminuir}>-</button>
           </div>    
           <div className="botonAgregar">
-          <button className="btnAgregar" onClick={agregarAlCarrito}>agregar al carrito</button>
-            
+            <button className="btnAgregar" onClick={agregarAlCarrito}>agregar al carrito</button>
           </div>
+        </div>
     </>
                
   )

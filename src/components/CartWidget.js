@@ -5,15 +5,15 @@ import ShopIcon from "./iconos/ShopIcon.png"
 
 const CartWidget = () => {
 
-    const {CarCantidad} = useContext (contexto)
-    const total = CarCantidad ()
-    console.log (total)
-
-      
+    const resultado = useContext (contexto)
+      console.log (resultado)
+                
     return (
-        <Link to="/carrito"><img className='iconoCarrito' src= {ShopIcon} alt= "IconoCarrito"/>
-        <p>{total}</p>
+        
+        <Link to="/carrito" className='cartWidget'><img className='iconoCarrito' src= {ShopIcon} alt= "IconoCarrito"/>
+        {resultado.cantidad_total}
         </Link>
+        
     )
 }
 export default CartWidget
