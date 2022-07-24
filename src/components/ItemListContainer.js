@@ -16,7 +16,7 @@ useEffect(() => {
 
   if (categoryId) {
     const collectionProductos = collection(db, "Productos")
-    const filtroDeLaConsulta = query(collectionProductos, where("categoryId", "==", "difusores"))
+    const filtroDeLaConsulta = query(collectionProductos, where("categoryId", "==", "velas"))
     const consulta = getDocs(filtroDeLaConsulta)
 
     consulta

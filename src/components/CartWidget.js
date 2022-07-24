@@ -7,6 +7,7 @@ const CartWidget = () => {
 
     const resultado = useContext (contexto)
       console.log (resultado)
+    
                 
     return (
         

@@ -4,12 +4,10 @@ import ItemDetailContainer from "./components/ItemDetailContainer"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import {MiProvider} from "./components/CartContext"
 import { db} from "./firebase"
-import Carrito from "./components/Carrito"
+import Carrito from "./components/ItemCartContainer"
 import ItemCartContainer from "./components/ItemCartContainer"
 
-
 console.log (db)
-
 
 const App = () => {
     return (

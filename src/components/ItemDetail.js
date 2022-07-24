@@ -9,12 +9,11 @@ function ItemDetail ({name, id, descripcion, stock, precio, image}) {
   const [cant, setCant] = useState(0)
 
   
-  
   const onAdd = (cantidadSeleccionada) => {
     console.log ("desde item detail:" + cantidadSeleccionada)
     if (cantidadSeleccionada > 0) {
-      agregarProducto ({ id, descripcion, stock, precio, image, cantidadSeleccionada})
-    }
+      agregarProducto ({ id, name, stock, precio, image, cantidadSeleccionada})
+   }
     setCant(cantidadSeleccionada);
    
   };
