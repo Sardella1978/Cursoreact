@@ -31,18 +31,18 @@ export const MiProvider=({children}) =>{
         setPrecioTotal(montoTotal);
       }, [carrito]);
          
-    const agregarProducto = (producto,cantidad) => {
-        const copia = [...carrito]
-        const nuevo_producto = { ...producto,
-                           cantidad : cantidad
-        }
-        copia.push(nuevo_producto)
-        setCarrito(copia)
-    }
+    // const agregarProducto = (producto,cantidad) => {
+    //     const copia = [...carrito]
+    //     const nuevo_producto = { ...producto,
+    //                        cantidad : cantidad
+    //     }
+    //     copia.push(nuevo_producto)
+    //     setCarrito(copia)
+    // }
 
-    // const agregarProducto = (producto) => {
-    //     if (!isInCart(producto.id)) setCarrito([...carrito, producto]);
-    //   };
+    const agregarProducto = (producto) => {
+        if (!isInCart(producto.id)) setCarrito([...carrito, producto]);
+      };
     
       const quitarProducto = (idProducto) => {
         setCarrito(carrito.filter((producto) => producto.id !== idProducto));
@@ -63,7 +63,7 @@ export const MiProvider=({children}) =>{
         agregarProducto,
         quitarProducto,
         vaciarCarrito,
-        isInCart
+        isInCart,
         
     }
 

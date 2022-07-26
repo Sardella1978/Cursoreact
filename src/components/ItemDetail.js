@@ -30,9 +30,7 @@ function ItemDetail ({name, id, descripcion, stock, precio, image}) {
         </div>
         
     </div>
-    //una vez almacenado el contador tiene que desaparecer
-    //eso lo hacemos con un ternario (si cantidad es 0 o null=false...)
-    //redireccionamos hacia la ruta "/cart"
+    
   )
   }
 

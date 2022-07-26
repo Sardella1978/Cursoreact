@@ -16,7 +16,7 @@ const ButtonPrimario = ({ accion, tipoBoton, texto }) => {
     };
   
     return (
-      <button onClick={accion}>
+      <button onClick={accion} className={getEstilo(tipoBoton)}>
         {texto}
       </button>
     );

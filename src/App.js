@@ -6,6 +6,7 @@ import {MiProvider} from "./components/CartContext"
 import { db} from "./firebase"
 import Carrito from "./components/ItemCartContainer"
 import ItemCartContainer from "./components/ItemCartContainer"
+import Checkout from "./components/Checkout"
 
 console.log (db)
 
@@ -21,6 +22,7 @@ const App = () => {
             <Route path='/category/:categoryId' element={<ItemListContainer/>}/>
             <Route path='/detail/:id' element={<ItemDetailContainer/>}/>
             <Route path="/carrito" element={<ItemCartContainer/>}/>
+            <Route path="/checkout" element ={<Checkout/>}/>
          </Routes>
         </MiProvider>
       </BrowserRouter>  

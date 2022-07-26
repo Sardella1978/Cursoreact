@@ -4,8 +4,6 @@ import ItemList from "./ItemList";
 import {db} from "../firebase";
 import {getDocs, collection, query, where} from "firebase/firestore"
 
-
-
 function ItemListContainer () {
 
 const [items, setItems] = useState ([])
@@ -17,6 +15,7 @@ useEffect(() => {
   if (categoryId) {
     const collectionProductos = collection(db, "Productos")
     const filtroDeLaConsulta = query(collectionProductos, where("categoryId", "==", "velas"))
+    console.log (filtroDeLaConsulta)
     const consulta = getDocs(filtroDeLaConsulta)
 
     consulta
@@ -33,7 +32,9 @@ useEffect(() => {
       .catch((error) => {
         console.log(error)
       })
-  } else {
+    }
+   
+    else {
 
     const collectionProductos = collection(db, "Productos")
     const consulta = getDocs(collectionProductos)
@@ -56,28 +57,6 @@ useEffect(() => {
 
 }, [categoryId])
 
-  
-//  useEffect (() => {
-  
-// const collectionProductos= collection (db, "Productos")
-//   console.log (collectionProductos)
-// const consulta = getDocs (collectionProductos)
-   
-// consulta
-//     .then ((resultado)=>{
-//     console.log (resultado.docs)
-
-//     const productos_mapeados= resultado.docs.map(referencia =>{
-//       const aux = referencia.data()
-//       aux.id = referencia.id
-//       return aux
-//     })
-//     setItems (productos_mapeados)
-//  })
-//     .catch ((error)=>{
-//     // console.log (error)
-//  })
-//  }, [categoryId])
   
   return (
     
