@@ -1,4 +1,6 @@
 const productos = [
+
+    //VELAS
     {
     id: 1,
     name: 'Velas glass',
@@ -17,14 +19,33 @@ const productos = [
         stock: 20,
     },
     {id: 3,
+        name: "Vela caramelera",
+        image: "../imagenes/vela_caramelera.jpg" ,
+        descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Quae ducimus perspiciatis unde minus quam iste molestias est dolor",
+        precio: 1500,
+        categoryId: `velas`,
+        stock: 10,
+    },
+    {id: 4,
+        name: "Vela cerámica",
+        image: "../imagenes/vela_ceramica.jpg" ,
+        descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Quae ducimus perspiciatis unde minus quam iste molestias est dolor",
+        precio: 1500,
+        categoryId: `velas`,
+        stock: 10,
+    },
+
+    //DIFUSORES
+
+    {id: 5,
         name: "Difusor cristal",
-        image: "../imagenes/difusores.jpg" ,
+        image: "../imagenes/Difusor_cristal.jpg" ,
         descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Quae ducimus perspiciatis unde minus quam iste molestias est dolor",
         precio: 1500,
         categoryId: "difusores",
         stock: 15,
     },
-    {id: 4,
+    {id: 6,
         name: "Difusor nature",
         image: "../imagenes/difusores.jpg" ,
         descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Quae ducimus perspiciatis unde minus quam iste molestias est dolor",
@@ -32,7 +53,26 @@ const productos = [
         categoryId: "difusores",
         stock: 15,
     },
-    {id: 5,
+    {id: 7,
+        name: "Humidificador nature",
+        image: "../imagenes/humidificador_nature.jpg" ,
+        descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Quae ducimus perspiciatis unde minus quam iste molestias est dolor",
+        precio: 1500,
+        categoryId: `difusores`,
+        stock: 10,
+    },
+    {id: 8,
+        name: "Difusor cerámica",
+        image: "../imagenes/difusor_ceramica.jpg" ,
+        descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Quae ducimus perspiciatis unde minus quam iste molestias est dolor",
+        precio: 1500,
+        categoryId: `difusores`,
+        stock: 10,
+    },
+
+    //ESENCIAS
+
+    {id: 9,
         name: "Esencia de vainilla",
         image: "../imagenes/difusores.jpg", 
         descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Quae ducimus perspiciatis unde minus quam iste molestias est dolor",
@@ -40,14 +80,16 @@ const productos = [
         categoryId: "esencias",
         stock: 20,
     },
-    {id: 6,
+    {id: 10,
         name: "Esencia de verbena",
         image: "../imagenes/difusores.jpg" ,
         descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Quae ducimus perspiciatis unde minus quam iste molestias est dolor",
         precio: 1500,
         categoryId: `esencias`,
         stock: 10,
-    }
+    },
+    
+    
 ]   
 
 export default productos;

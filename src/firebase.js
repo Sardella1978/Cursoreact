@@ -1,7 +1,6 @@
 
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import {doc, getDoc} from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBwPAzszoNvx7gjuuLlwurJaShaDlj5RmE",
@@ -16,14 +15,4 @@ const app = initializeApp(firebaseConfig);
 export const db = getFirestore (app)
 
 
-// const coleccionProductos = "productos";
-// export const getProductoPorId = (idProducto) => {
-//   return getDoc(doc(db, coleccionProductos, idProducto))
-//     .then((response) => {
-//       return { id: response.id, ...response.data() };
-//     })
-//     .catch((error) => {
-//       console.log("el articulo no existe: " + error);
-//     });
-// };
 

@@ -1,3 +1,5 @@
+import React from 'react';
+
 const ButtonPrimario = ({ accion, tipoBoton, texto }) => {
     const getEstilo = (tipoBoton) => {
       switch (tipoBoton) {

@@ -1,29 +1,29 @@
-import CartWidget from "./CartWidget"
-import {Link} from "react-router-dom"
-// import { useContext } from "react"
-// import { useState, useEffect } from "react"
-// import { contexto } from "./CartContext"
+import React from 'react';
+import CartWidget from "./CartWidget";
+import {Link} from "react-router-dom";
+import Facebook from "./iconos/Facebook.png";
+import Instagram from "./iconos/Instagram.png"
+import mail from "./iconos/mail.png"
 
 const NavBar = () => {
-//     const {cantidad_total} = useContext (contexto)  
-//     const [carritoVacio, setCarritoVacio] = useState (true)
 
-//    useEffect (()=>{
-//     setCarritoVacio (cantidad_total > 0 ? false: true)
-//     }, [cantidad_total])   
 
     return (
         <nav className= "navbar-flex">
-            
-          <h1><Link to="Home">Velas y Aromas</Link></h1>
-            <ul className = "nav-flex">
+            <ul className='nav-flex-redes'>
+               <li><img src= {Facebook} alt= "IconoFacebook"/></li>
+               <li><img src= {Instagram} alt= "IconoInstagram"/></li>
+               <li><img src= {mail} alt= "IconoMail"/></li>
+            </ul>
+            <div className='titulo'>
+                 <Link to="Home"><img className='imgLogo' src="/imagenes/Logo1.png" alt="" /></Link>
+            </div>
+            <ul className = "nav-flex-category">
                <li><Link to='category/Velas'>Velas</Link></li>
                <li><Link to='category/Difusores'>Difusores</Link></li>
-               <li><Link to='category/Esencias'>Esencias</Link></li>
-               <div>  
-                <li className="iconoCarrito"><Link to="Carrito"><CartWidget/></Link></li>  
-               </div>              
+               <li><Link to='category/Esencias'>Esencias</Link></li>                     
             </ul>
+               <div className='iconoCarrito'><Link to="Carrito"><CartWidget/></Link></div>
         </nav>
     )
     }

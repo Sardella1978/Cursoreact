@@ -1,3 +1,4 @@
+import React from 'react';
 import ItemCart from "./ItemCart";
 import {contexto} from "./CartContext";
 import { useContext } from "react";

@@ -1,9 +1,10 @@
+import React from 'react';
 import ItemCartList from "./ItemCartList";
 import ButtonPrimario from "./ButtonPrimario";
 import { useContext } from "react";
 import {contexto} from "./CartContext"
 import { useNavigate } from "react-router-dom";
-import Formulario from "./Checkout";
+
 
 const ItemCartContainer = () => {
   const { vaciarCarrito, cantidad_total, precio_total } =
@@ -13,22 +14,14 @@ const ItemCartContainer = () => {
 
   const limpiarCarrito = () => {
     vaciarCarrito();
-    // const notificacion = Swal.mixin({
-    //   toast: true,
-    //   position: "top-end",
-    //   showConfirmButton: false,
-    //   timer: 2000,
-    //   timerProgressBar: true,
-    // });
-
-    // notificacion.fire({
-    //   icon: "warning",
-    //   title: "Se quitaron todos los artículos del carrito.",
-    // });
   };
 
   return (
+    <>
+      
     <div className="ItemCartContainer">
+      <h2>Tu carrito</h2>
+      
         {cantidad_total > 0 ? (
           <>
             <div >
@@ -50,18 +43,17 @@ const ItemCartContainer = () => {
                   tipoBoton={"confirmar"}
                 />
                 </div>
-                <div>  
+                <div className='totalCarrito'>  
                   Total:{" "}
                   <span >{"$" + precio_total}</span>
                 </div>
                </div>
-              <Formulario/>
-                              
+                                            
           </>
         ) : (
           <>
             <h2 >
-              No hay productos para mostrar aquí
+              El carrito está vacío
             </h2>
             <div>
               <ButtonPrimario
@@ -73,6 +65,7 @@ const ItemCartContainer = () => {
           </>
         )}
       </div>
+      </>
   );
 };
 

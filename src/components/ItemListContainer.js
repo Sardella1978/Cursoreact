@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
@@ -62,7 +63,8 @@ useEffect(() => {
   return (
     
     <>
-      <h2>Catálogo de productos</h2>
+      
+      <div><img className='imgPresentacion' src="/imagenes/deco_presentacion.png" alt="" /></div>
       <div className="ItemListContainer">
       <ItemList productos={items}/>
       </div>

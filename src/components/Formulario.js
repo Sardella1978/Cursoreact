@@ -1,74 +1,40 @@
-import { useState } from "react"
-import { Link } from "react-router-dom"
+import React from 'react';
 
-const Formulario = () => {
+const Formulario = ({handleChange, usuario, handleSubmit}) => {
 
-  const [nombre, setNombre] = useState("")
-  const [tel, setTel] = useState("")
-  const [email, setEmail] = useState("")
-  const [usuario, setUsuario] = useState({
-    nombre: "",
-    email: "",
-    telefono: ""
-  })
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    //const usuario = { nombre, tel, email }
-    //console.log(usuario)
-  }
-
-  const handleClick = (e) => {
-    e.preventDefault()
-  }
-
-  const handleNombreChange = (e) => {
-    setNombre(e.target.value)
-  }
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value)
-  }
-
-  const handleTelChange = (e) => {
-    setTel(e.target.value)
-  }
-
-  const handleChange = (e) => {
-    //usuario.nombre
-    //usuario.e.target.id
-    //usuario{e.target.id}
-    //console.dir(e.target.id)
-    //usuario.nombre = ??
-    /*  const nombre = e.target.id
-     usuario.nombre */
-    //Object.assing()
-    /* const copia = { ...usuario }
-    copia[e.target.id] = e.target.value
-    setUsuario(copia) */
-    setUsuario({ ...usuario, [e.target.id] : e.target.value})
-    //{telefono:"",email:"", nombre : "horacio" }
-  }
-
-  return (
-    <div>
-      <h1>Carrito</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto impedit sint minima cum minus? Numquam deleniti facilis, officiis perferendis quis sed voluptas nisi ipsa, magni, temporibus odio a commodi maiores!</p>
-
-      <form onSubmit={handleSubmit}>
-        <div>
-          <input onChange={handleChange} type="text" id="nombre" placeholder="Nombre..." value={nombre} />
+   return (
+    <div className='form'>
+      <form className='form1'  onSubmit={handleSubmit}>
+        <div className='form2'>
+          <label className='label'>Nombre y Apellido</label>
+          <input className='input'
+                 onChange= {handleChange}
+                 type="text" 
+                 name="nombre" 
+                 placeholder="Nombre..." 
+                 value={usuario.nombre} />
         </div>
-        <div>
-          <input onChange={handleChange} type="email" id="email" placeholder="Email..." value={email} />
+        <div className='form2'>
+          <label className='label'>E-mail</label>
+          <input className='input'
+                 onChange={handleChange} 
+                 type="email" 
+                 name="email" 
+                 placeholder="Email..." 
+                 value={usuario.email} />
         </div>
-        <div>
-          <input onChange={handleChange} type="number" id="telefono" placeholder="Telefono..." />
+        <div className='form2'>
+          <label className='label'>Teléfono</label>
+          <input className='input'
+                 onChange={handleChange} 
+                 type="number" 
+                 name="tel" 
+                 placeholder="Telefono..."
+                 value= {usuario.tel} />
         </div>
-        <button /* onClick={handleClick} */>comprar</button>
+        
       </form>
 
-      <Link to="/checkout">Proceder con la compra</Link>
     </div>
   )
 }
