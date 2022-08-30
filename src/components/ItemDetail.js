@@ -28,16 +28,15 @@ function ItemDetail ({name, id, descripcion, stock, precio, image}) {
       icon: "success",
       title: "Artículo agregado",
     });
-  } 
-
-};
-
+    }
+  }
+  
   return (
     <div className="itemDetail">
         <div>
            <img src={image} alt={id} className="imgItemDetail" />
         </div>
-        <div className="descrption">
+        <div className="description">
           <h3>{name}</h3>
           <p>{descripcion}</p>
           <h4><b>$ {precio}</b></h4>

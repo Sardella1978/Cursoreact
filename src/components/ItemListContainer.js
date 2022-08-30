@@ -12,10 +12,10 @@ const {categoryId} = useParams ()
 const [loading, setLoading] = useState()
 
 useEffect(() => {
- 
+  
   if (categoryId) {
     const collectionProductos = collection(db, "Productos")
-    const filtroDeLaConsulta = query(collectionProductos, where("categoryId", "==","velas"))
+    const filtroDeLaConsulta = query(collectionProductos, where("categoryId", "==", "velas"))
     const consulta = getDocs(filtroDeLaConsulta)
     console.log (consulta)
     
