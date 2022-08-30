@@ -2,6 +2,7 @@
   "name": "cursoreact",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://Sardella1978.github.io/cursoreact",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
     "@testing-library/jest-dom": "^5.16.4",
@@ -18,6 +19,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "nmp run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
